@@ -29,6 +29,9 @@ if (config.env === 'development') {
       historyApiFallback(),
       webpackDevMiddleware(compiler, {
         publicPath: webpackConfig.output.publicPath,
+        hot: true,
+        quiet: webpackConfig.compiler_quiet,
+        lazy: false,
         stats: webpackConfig.compiler_stats,
         noInfo: false,
       }),

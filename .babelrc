@@ -3,9 +3,5 @@
   "plugins": ["transform-runtime", ["import", {
     "libraryName": "antd",
     "style": "css"
-  }]],
-  "ignore": [
-    "*/**/*.min.js",
-    "*.csv"
-  ]
+  }]]
 }

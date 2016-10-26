@@ -34,6 +34,12 @@
     "no-debugger": 0,
     # 强制分号结尾
     "semi": 0,
+    # 不允许多余空格
+    "key-spacing": 0,
+    # import后缀
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0,
     # 箭头函数圆括号
     "arrow-parens": 0,
     # 数组和对象键值对最后一个逗号， never参数：不能带末尾的逗号, always参数：必须带末尾的逗号，

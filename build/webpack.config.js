@@ -25,7 +25,7 @@ const webpackConfig = {
 // ------------------------------------
 // Entry Points
 // ------------------------------------
-const APP_ENTRY = paths.client('main.jsx')
+const APP_ENTRY = paths.client('main.js')
 webpackConfig.entry = {
   app: __DEV__
     ? [APP_ENTRY].concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`) // path arguments  - The path which the middleware is serving the event stream on
@@ -124,6 +124,16 @@ webpackConfig.module.loaders.push({
     BASE_CSS_LOADER,
     'postcss',
     'sass?sourceMap',
+  ],
+})
+
+webpackConfig.module.loaders.push({
+  test: /\.css$/,
+  exclude: null,
+  loaders: [
+    'style',
+    BASE_CSS_LOADER,
+    'postcss',
   ],
 })
 
