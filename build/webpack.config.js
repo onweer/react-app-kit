@@ -25,7 +25,7 @@ const webpackConfig = {
 // ------------------------------------
 // Entry Points
 // ------------------------------------
-const APP_ENTRY = paths.client('main.js')
+const APP_ENTRY = paths.client('main.jsx')
 webpackConfig.entry = {
   app: __DEV__
     ? [APP_ENTRY].concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`) // path arguments  - The path which the middleware is serving the event stream on
