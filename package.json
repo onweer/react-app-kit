@@ -1,0 +1,40 @@
+{
+  "name": "react-app-kit",
+  "version": "0.1.0",
+  "description": "react-app introduction to a subject, build with redux, react-router, es6, webpack",
+  "main": "./src",
+  "scripts": {
+    "start": "better-npm-run start"
+  },
+  "betterScripts": {
+    "start": {
+      "command": "node bin/server",
+      "env": {
+        "DEBUG": "app:*"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onweer/react-app-kit.git"
+  },
+  "devDependencies": {
+    "better-npm-run": "^0.0.12"
+  },
+  "dependencies": {},
+  "keywords": [
+    "react",
+    "redux",
+    "react-router",
+    "es6",
+    "webpack",
+    "quick",
+    "start"
+  ],
+  "author": "onweer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onweer/react-app-kit/issues"
+  },
+  "homepage": "https://github.com/onweer/react-app-kit#readme"
+}
