@@ -11,6 +11,5 @@ debug(`Server is now running at http://localhost:${port}.`)
 // proxy to service
 const proxy = httpProxy.createProxyServer();
 server.use((req, res) => {
-  console.log('proxy path: ', req.path);
-  proxy.web(req, res, { target: 'http://localhost:3000' });
+  proxy.web(req, res, { target: 'http://localhost:3000' }); // 把请求代理到3000指向BrowserSync
 })

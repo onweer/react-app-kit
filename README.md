@@ -1,5 +1,5 @@
 # react-app-kit
-react-app introduction to a subject, build with redux, react-router, es6, webpack, ant design
+react-app introduction to a subject, build with redux, react-router, es6, webpack, ant design, browserSync, express
 
 [![Build Status](https://travis-ci.org/onweer/react-app-kit.svg?branch=master)](https://travis-ci.org/onweer/react-app-kit)
 
@@ -52,7 +52,8 @@ Then install dependencies and check to see it works
 $ npm install                   # Install project dependencies
 $ npm start                     # Compile and launch
 ```
-
+![](http://7xwzb2.com1.z0.glb.clouddn.com/40D80DB5-9A09-48PP61-902F-CF3DA10F1EE4.png)
+![](http://7xwzb2.com1.z0.glb.clouddn.com/3DDC34B6-8CC1-41B4-BD98-28F45098BA6F.png)
 ## Directory Layout
 Before you start, take a moment to see how the project structure looks like:
 ```
@@ -73,3 +74,4 @@ Before you start, take a moment to see how the project structure looks like:
 ## Reference
 - [react-starter-kit](https://github.com/kriasoft/react-starter-kit)
 - [react-app-sketch](https://github.com/zzswang/react-app-sketch)
+- [reactSPA](https://github.com/JasonBai007/reactSPA)

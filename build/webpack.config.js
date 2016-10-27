@@ -76,7 +76,7 @@ if (__DEV__) {
     // 维持构建编译代码
     new webpack.optimize.OccurenceOrderPlugin(), // 讓 webpack 在 id 的分派上優化並保持一致性。
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
+    new webpack.optimize.UglifyJsPlugin({  // 混淆打包
       compress: {
         unused: true,
         dead_code: true,
@@ -100,7 +100,7 @@ if (!__TEST__) {
 // ------------------------------------
 // JavaScript / JSON
 webpackConfig.module.loaders = [{
-  test: /\.(js|jsx)$/,
+  test: /\.(js|jsx)$/, // js/jsx用babel处理 with babel compile
   exclude: /node_modules/,
   loader: 'babel',
   query: config.compiler_babel,
@@ -141,6 +141,7 @@ webpackConfig.sassLoader = {
   includePaths: paths.client('styles'),
 }
 
+// cssnano 加载器优化css代码
 webpackConfig.postcss = [
   cssnano({
     autoprefixer: {

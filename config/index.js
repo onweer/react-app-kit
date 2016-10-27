@@ -6,7 +6,7 @@ const ip = require('ip')
 debug('Creating default configuration.')
 
 // ========================================================
-// Default Configuration
+// Default Configuration`
 // ========================================================
 const config = {
   env: process.env.NODE_ENV || 'development',
@@ -33,7 +33,7 @@ const config = {
     cacheDirectory: true, // 设置缓存目录
     plugins: ['transform-runtime', ['import', {
       'libraryName': 'antd',
-      'style': 'css',
+      'style': true,
     }]],
     presets: ['latest', 'react', 'stage-0'],
   },
@@ -95,7 +95,7 @@ config.globals = {
 const pkg = require('../package.json')
 
 config.compiler_vendors = config.compiler_vendors
-  .filter((dep) => {
+  .filter((dep) => { // 检查pkg中是否安装了依赖
     if (pkg.dependencies[dep]) return true
 
     debug(

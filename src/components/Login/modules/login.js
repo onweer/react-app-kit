@@ -15,7 +15,8 @@ export function login (data) {
   return async(dispatch, getState) => {
     const action = await dispatch({
       [CALL_API]: {
-        endpoint: '/api/sessions',
+        endpoint: 'http://localhost:9527/api/v1/sessions',
+        headers: { 'Content-Type': 'application/json' },
         method: 'POST',
         body: JSON.stringify(data),
         types: [LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL],

@@ -18,7 +18,7 @@ const paths = config.utils_paths
 // app.use(historyApiFallback())
 
 // ------------------------------------
-// Apply Webpack HMR Middleware
+// Apply Webpack HMR Middleware WebPack热加载服务器,使用browserSync可以再多终端同步刷新甚至滚动
 // ------------------------------------
 if (config.env === 'development') {
   const compiler = webpack(webpackConfig)
@@ -29,9 +29,11 @@ if (config.env === 'development') {
       historyApiFallback(),
       webpackDevMiddleware(compiler, {
         publicPath: webpackConfig.output.publicPath,
+        contentBase : paths.client(),
         hot: true,
         quiet: webpackConfig.compiler_quiet,
         lazy: false,
+        progress: true,
         stats: webpackConfig.compiler_stats,
         noInfo: false,
       }),
