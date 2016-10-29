@@ -10,8 +10,8 @@ class LoginPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Received values of form:', this.props.form.getFieldsValue().username);
-    console.log('Received values of form:', this.props.form.getFieldsValue().password);
+    // console.log('Received values of form:', this.props.form.getFieldsValue().username);
+    // console.log('Received values of form:', this.props.form.getFieldsValue().password);
     this.props.login({
       username: this.props.form.getFieldsValue().username,
       password: this.props.form.getFieldsValue().password
@@ -19,6 +19,7 @@ class LoginPage extends Component {
   }
 
   render(){
+    console.log(this.props);
     const { login, auth, fetching } = this.props;
     const { getFieldDecorator } = this.props.form;
 

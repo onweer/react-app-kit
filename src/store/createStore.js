@@ -11,13 +11,14 @@ import { apiMiddleware } from 'redux-api-middleware';
 // 自动生成标准的RSAAs然后发送FSAs
 import makeRootReducer from './reducers'
 import { updateLocation } from './location'
+import wrapperHeader from '../middlewares/wrapperHeaderMiddleware.js' // ev.req add token ...
 
 export default (initialState = {}) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
   const logger = createLogger()
-  const middleware = [thunk, apiMiddleware, logger]
+  const middleware = [thunk, wrapperHeader, apiMiddleware, logger]
 
   // ======================================================
   // Store Enhancers 第三個參數通常會放入我們想要使用用來增強 Redux 功能

@@ -33,7 +33,7 @@ const config = {
     cacheDirectory: true, // 设置缓存目录
     plugins: ['transform-runtime', ['import', {
       'libraryName': 'antd',
-      'style': true,
+      'style': 'css',
     }]],
     presets: ['latest', 'react', 'stage-0'],
   },

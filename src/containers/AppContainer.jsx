@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { browserHistory, Router } from 'react-router'
 import { Provider } from 'react-redux'
+import { restoreSessionFromLocalStorage } from '../components/Login/modules/login.js'
 
 class AppContainer extends Component {
   static propTypes = {
@@ -15,7 +16,8 @@ class AppContainer extends Component {
   render() {
     // main.js 传递过来的routes,store
     const { routes, store } = this.props
-
+    // get session back
+    store.dispatch(restoreSessionFromLocalStorage())
     return (
       // Provider包起來將 store 傳遞下去
       // 這邊使用 browserHistory 當做 history 有三种:browserHistory, hashHistory, createMemoryHistory

@@ -133,7 +133,8 @@
     "webpack",
     "quick",
     "start",
-    "ant"
+    "ant",
+    "jwt"
   ],
   "author": "onweer",
   "license": "ISC",

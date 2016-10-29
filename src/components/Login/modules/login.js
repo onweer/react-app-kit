@@ -10,13 +10,20 @@ export const LOGIN_FAIL = 'LOGIN_FAIL'
 // Actions
 // ------------------------------------
 
-export function login (data) {
-  console.log(data);
+// store JWT to LocalStorage
+export function restoreSessionFromLocalStorage() {
+  return {
+    type: LOGIN_SUCCESS,
+    payload: JSON.parse(localStorage.getItem('session')),
+  };
+}
+
+export function login(data) {
+  // console.log(data); 表单的值
   return async(dispatch, getState) => {
     const action = await dispatch({
       [CALL_API]: {
         endpoint: 'http://localhost:9527/api/v1/sessions',
-        headers: { 'Content-Type': 'application/json' },
         method: 'POST',
         body: JSON.stringify(data),
         types: [LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL],
@@ -24,9 +31,9 @@ export function login (data) {
     });
 
     if (action.type === LOGIN_SUCCESS) {
-      console.log(action.payload);
+       // 存储JWT,并登录成功跳转到首页.
+      localStorage.setItem('session', JSON.stringify(action.payload));
     }
-
     return action;
   }
 }
@@ -40,10 +47,10 @@ const ACTION_HANDLERS = {
     return ({...state, fetching: true}) // 加上fetching状态
   },
   [LOGIN_SUCCESS]: (state, action) => {
-    return ({...state, fetching: false, ...action.payload}) // 结束fetching状态,返回接收到的data
+    return ({...state, fetching: false, ...action.payload, error: null }) // 结束fetching状态,返回接收到的data
   },
   [LOGIN_FAIL]: (state, action) => {
-    return ({...state, fetching: false, error: action.payload.response }) // payload对象有message,name,response对象,status
+    return ({...state, fetching: false, error: action.payload.response.message }) // payload对象有message,name,response对象,status
   },
 }
 
@@ -52,7 +59,7 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const initialState = {
   fetching: false,
-  auth: false
+  auth: false,
 }
 export default function LoginReducer(state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
