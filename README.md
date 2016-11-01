@@ -17,8 +17,6 @@ Most of the code is given a bilingual note.<br>
 Before you begin, think about whether these features are needed in our project process<br>
 在开始之前,思考一下我们的项目程序是否需要这些特性:
 
-# react-app-kit-server
-
 
 ## Features 特性
 | **Tech** | **Description** |**Learn More**|
@@ -32,6 +30,7 @@ Before you begin, think about whether these features are needed in our project p
 | [Mocha](http://mochajs.org) | Automated tests with chai|[Mocha-tutorial](https://github.com/ruanyf/mocha-demos)|
 | [ESLint](http://eslint.org/) | Lint JS. Reports syntax and style issues. Using [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) for additional React specific linting rules. |[ESlint-tutorial](http://www.ruanyifeng.com/blog/2016/01/babel.html) |
 | [SASS](http://sass-lang.com/) | Compiled CSS styles with variables, functions, and more. | [sass-tutorial ](http://www.ruanyifeng.com/blog/2012/06/sass.html)|
+| [BrowserSync](https://www.browsersync.io/)| Time-saving synchronised browser testing. | [browserSync-tutorial](https://scotch.io/tutorials/how-to-use-browsersync-for-faster-development)|
 
 This is a Sketch for a real React App, it could be used for you introduction to a subject
 
@@ -54,12 +53,55 @@ Then install dependencies and check to see it works
 $ npm install                   # Install project dependencies
 $ npm start                     # Compile and launch
 ```
-![](http://7xwzb2.com1.z0.glb.clouddn.com/40D80DB5-9A09-48PP61-902F-CF3DA10F1EE4.png)
-![](http://7xwzb2.com1.z0.glb.clouddn.com/3DDC34B6-8CC1-41B4-BD98-28F45098BA6F.png)
+
+If everything works, you should see the following:
+
+![](http://7xwzb2.com1.z0.glb.clouddn.com/40D80DB5-9A09-4861-902F-CF3DA10F1EE4.png)
+
+While developing, you will probably rely mostly on `npm start` however, there are additional scripts at your disposal:<br>
+开发过程中，你用得最多的会是`npm start`，但是这里还有很多其它的处理：
+
+|`npm run <script>`||
+|------------------|-----------|
+|`start`| Serves your app at localhost:3000. HMR will be enabled in development.|
+|`compile`|Compiles the application to disk (~/dist by default).|
+|`dev`| Same as `npm start`, extra `NODE_ENV`: development|
+|`test`| Runs unit tests with Karma and generates a coverage report.|
+|`test:dev`| Runs Karma and watches for changes to re-run tests; does not generate coverage reports.|
+|`deploy`| Runs `linter`, tests, and then, on success, compiles your application to disk.|
+|`deploy:dev`|Same as `deploy` but overrides `NODE_ENV` to "development".|
+|`deploy:prod`|Same as `deploy` but overrides `NODE_ENV` to "production".|
+|`lint`| Lint all .js files.|
+|`lint:fix`| Lint and fix all .js files. Read more on this. [more](http://eslint.org/docs/user-guide/command-line-interface.html#fix)|
+
+## Http Server Example
+[react-app-kit-server](https://github.com/onweer/react-app-kit-server) work with jwt and cors
+
+This is a server-side application that works with the react-app-kit.
+```
+$ git clone https://github.com/onweer/react-app-kit-server.git <my-project-server-name>
+$ cd <my-project-server-name>
+```
+Then install dependencies and check to see it works
+```
+$ npm install                   # Install project dependencies
+$ npm start                     # Compile and launch
+
+```
+Server is listing at 9527.
+
 
 ### Recommend
+
 [JWT Analyzer & Inspector](https://chrome.google.com/webstore/detail/jwt-analyzer-inspector/henclmbnehmcpbjgipaajbggekefngob)
-[Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension)
+
+![JWT Analyzer & Inspector](http://7xwzb2.com1.z0.glb.clouddn.com/QQ20161031-2.png)
+
+[Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension)<br>
+
+![Redux DevTools](http://7xwzb2.com1.z0.glb.clouddn.com/QQ20161031-0.png)
+![Redux DevTools](http://7xwzb2.com1.z0.glb.clouddn.com/QQ20161031-1.png)
+
 
 ## Directory Layout
 Before you start, take a moment to see how the project structure looks like:
