@@ -1,0 +1,133 @@
+.ant-layout-aside {
+  position: relative;
+  min-height: 600px;
+}
+
+.ant-layout-aside .ant-layout-logo {
+  width: 150px;
+  height: 48px;
+  background: url("./assets/logo.png") center no-repeat;
+  background-size: 95%;
+  border-radius: 8px;
+  // margin: 16px 24px 16px 28px;
+  margin: 16px 24px 0px 28px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside-collapse .ant-layout-logo {
+  width: 32px;
+  margin: 0 0 0 12px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside .ant-layout-sider {
+  width: 224px;
+  background: #404040;
+  position: fixed;
+  overflow: visible;
+  padding-bottom: 24px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside-collapse .ant-layout-sider {
+  width: 64px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside .ant-layout-sider > .ant-menu {
+  margin-bottom: 20px;
+}
+
+.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item {
+  margin: 16px 0;
+}
+
+.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item:first-child {
+  margin: 0px 0;
+}
+
+.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item > a {
+  vertical-align: baseline;
+  display: inline-block;
+}
+// 设置大导航的字体变化动画
+.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item > .anticon {
+  transition: font-size .3s;
+}
+// 设置到小导航菜单项的动画
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item {
+  transition: all 0s ease;
+}
+// 小导航设置稍大一点的字体
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item > .anticon {
+  font-size: 16px;
+  display: inline-block;
+}
+// 小导航时隐藏 nav-text
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item > a {
+  display: none;
+}
+// 小导航时鼠标移动上去改变背景颜色,字体颜色
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item:hover {
+  background: #2db7f5;
+  color: #fff;
+  transition: all 0s ease;
+}
+// 小导航设置鼠标移动上去显示nav-text字
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item:hover > a {
+  display: inline-block;
+  vertical-align: top;
+  background: #2db7f5;
+  color: #fff;
+  padding-right: 16px;
+  border-radius: 0 5px 5px 0;
+}
+
+/* 实际使用中需要改成 position: fixed */
+.ant-layout-aside .ant-aside-action {
+  height: 42px;
+  width: 224px;
+  position: fixed;
+  bottom: 0;
+  background: #656565;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside-collapse .ant-aside-action {
+  width: 64px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside .ant-layout-header {
+  background: #fff;
+  height: 64px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.ant-layout-aside .ant-layout-breadcrumb {
+  margin: 7px 0 -17px 24px;
+}
+
+.ant-layout-aside .ant-layout-main {
+  margin-left: 224px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside-collapse .ant-layout-main {
+  margin-left: 64px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside .ant-layout-container {
+  margin: 24px 16px;
+}
+
+.ant-layout-aside .ant-layout-content {
+  background: #fff;
+  padding: 24px;
+}

@@ -38,19 +38,22 @@ export function login(data) {
   }
 }
 
-
+export const actions = {
+  restoreSessionFromLocalStorage,
+  login
+}
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
   [LOGIN_REQUEST]: (state) => {
-    return ({...state, fetching: true}) // 加上fetching状态
+    return ({...state, fetching: true, error: null}) // 加上fetching状态
   },
   [LOGIN_SUCCESS]: (state, action) => {
-    return ({...state, fetching: false, ...action.payload, error: null }) // 结束fetching状态,返回接收到的data
+    return ({...state, fetching: false, ...action.payload }) // 结束fetching状态,返回接收到的data
   },
   [LOGIN_FAIL]: (state, action) => {
-    return ({...state, fetching: false, error: action.payload.response.message }) // payload对象有message,name,response对象,status
+    return ({...state, fetching: false, error: action.payload.response }) // payload对象有message,name,response对象,status
   },
 }
 
