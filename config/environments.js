@@ -19,7 +19,7 @@ module.exports = {
   // Overrides when NODE_ENV === 'production' 生产环境应用
   // ======================================================
   production: (config) => ({
-    compiler_public_path: '/',
+    compiler_public_path: '',
     compiler_devtool: null, // cancel SourceMap 取消./index.js中指定的sourceMap
     compiler_stats: { // When the webpack package is completed, the stats Specifies output options, 指定输出格式
       chunks: true,
